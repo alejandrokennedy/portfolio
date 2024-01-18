@@ -1,0 +1,1 @@
+export { default as AkLogo } from './Aklogo.svg'
