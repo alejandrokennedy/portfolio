@@ -1,7 +1,7 @@
 <svg width="49.99999999999999" height="49.99999999999999" xmlns="http://www.w3.org/2000/svg">
  <g>
   <title>Layer 1</title>
-  <text transform="matrix(1 0 0 1 0 0)" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Kumbh Sans'" font-size="34" id="svg_1" y="37.45556" x="0.60865" stroke-width="0" stroke="#000" fill="#000000">AK</text>
+  <text transform="matrix(1 0 0 1 0 0)" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Kumbh Sans'" font-size="34" id="svg_1" y="37.45556" x="0.60865" stroke-width="0" stroke="#000" fill="currentColor">AK</text>
  </g>
 
 </svg>
