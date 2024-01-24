@@ -1,7 +1,11 @@
+import { Welcome } from '@/components/Welcome/Welcome';
 import AppShellMobile from '../components/AppShellMobile/AppShellMobile';
 
 export default function HomePage() {
   return (
-    <AppShellMobile />
+    <AppShellMobile>
+      <div>HOME</div>
+      <Welcome />
+    </AppShellMobile>
   )
 }

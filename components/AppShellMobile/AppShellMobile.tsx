@@ -5,26 +5,25 @@ import { useDisclosure } from '@mantine/hooks';
 import { AkLogo } from '../svgs';
 import classes from './AppShellMobile.module.css'
 import Link from 'next/link';
-import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Welcome } from '../Welcome/Welcome';
+import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 
 const links = [
-  { link: '/about', label: 'About' },
+  { link: '/', label: 'Home' },
   { link: '/test', label: 'Test' },
-  { link: '/portfolio', label: 'Portfolio' },
-  { link: '/awards', label: 'Awards' },
-  { link: '/teaching', label: 'Teaching' },
-  { link: '/contact', label: 'Contact' },
+  // { link: '/about', label: 'About' },
+  // { link: '/portfolio', label: 'Portfolio' },
+  // { link: '/awards', label: 'Awards' },
+  // { link: '/teaching', label: 'Teaching' },
+  // { link: '/contact', label: 'Contact' },
 ]
 
-export default function MobileNavbar() {
-  const [opened, { toggle }] = useDisclosure();
-  const [active, setActive] = useState(links[0].link);
-
-  console.log('active', active)
-  console.log('opened', opened)
-
+export default function MobileNavbar({ children }: { children: any }) {
+  const [opened, { toggle }] = useDisclosure()
+  const pathLink = links.find((link) => link.link === usePathname())
+  const [active, setActive] = useState(pathLink?.link || '/')
+  
   const items = links.map((link) => (
     <Link key={link.label}
       href={link.link}
@@ -53,6 +52,7 @@ export default function MobileNavbar() {
             <Group ml="xl" gap={0} visibleFrom="sm">
               {items}
             </Group>
+            <ThemeToggle />
           </Group>
         </Group>
       </AppShell.Header>
@@ -62,8 +62,7 @@ export default function MobileNavbar() {
       </AppShell.Navbar>
 
       <AppShell.Main>
-        <Welcome />
-        <ColorSchemeToggle />
+        {children}
       </AppShell.Main>
     </AppShell>
   );
