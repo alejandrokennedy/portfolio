@@ -1,11 +1,10 @@
-import { Welcome } from '@/components/Welcome/Welcome';
 import AppShellMobile from '../components/AppShellMobile/AppShellMobile';
+import { HeroImage } from '@/components/HeroImage/HeroImage';
 
 export default function HomePage() {
   return (
     <AppShellMobile>
-      <div>HOME</div>
-      <Welcome />
+      <HeroImage />
     </AppShellMobile>
   )
 }

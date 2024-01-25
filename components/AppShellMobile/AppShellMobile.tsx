@@ -11,12 +11,12 @@ import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 
 const links = [
   { link: '/', label: 'Home' },
-  { link: '/test', label: 'Test' },
-  // { link: '/about', label: 'About' },
-  // { link: '/portfolio', label: 'Portfolio' },
-  // { link: '/awards', label: 'Awards' },
-  // { link: '/teaching', label: 'Teaching' },
-  // { link: '/contact', label: 'Contact' },
+  // { link: '/test', label: 'Test' },
+  { link: '/portfolio', label: 'Portfolio' },
+  { link: '/awards', label: 'Awards' },
+  { link: '/teaching', label: 'Teaching' },
+  { link: '/about', label: 'About' },
+  { link: '/contact', label: 'Contact' },
 ]
 
 export default function MobileNavbar({ children }: { children: any }) {
@@ -29,10 +29,7 @@ export default function MobileNavbar({ children }: { children: any }) {
       href={link.link}
       className={classes.link}
       data-active={active === link.link || undefined}
-      onClick={(event) => {
-        // event.preventDefault()
-        setActive(link.link)
-      }}
+      onClick={() => setActive(link.link)}
       >
       {link.label}
     </Link>

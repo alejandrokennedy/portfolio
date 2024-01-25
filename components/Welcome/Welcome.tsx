@@ -1,6 +1,5 @@
 import { Title, Text, Anchor } from '@mantine/core';
 import classes from './Welcome.module.css';
-import Link from 'next/link';
 
 export function Welcome() {
   return (
@@ -10,6 +9,7 @@ export function Welcome() {
         <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
           Kennedy
         </Text>
+        {' '} Test!
       </Title>
       <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
         This starter Next.js project includes a minimal setup for server side rendering, if you want
