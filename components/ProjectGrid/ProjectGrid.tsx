@@ -5,30 +5,62 @@ import { ProjectCard } from '../ProjectCard/ProjectCard';
 import discoSpiral from '../../public/images/discoSpiral.png';
 import covidPeople from '../../public/images/covidPeople.png';
 import covidRetrospective from '../../public/images/covidRetrospective.png';
+import dams from '../../public/images/dams.png';
+import investopediaTerms2022 from '../../public/images/investopediaTerms2022.png';
+import animationTemplateCanvas from '../../public/images/animationTemplateCanvas.png';
+import scaleExplorer from '../../public/images/scaleExplorer.png';
+import tidyTreeEditable from '../../public/images/tidyTreeEditable.png';
 
 export function ProjectGrid() {
   const items = [
     {
-      "name": "Covid Tracker",
+      "name": "Dams: A Toxic Calamity",
       "type": "Journalism",
-      "url": "https://people.com/health/see-how-the-highly-contagious-coronavirus-spread-across-the-us/",
-      "imgUrl": "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "img": covidPeople
+      "url": "https://undark.org/2021/06/01/below-dozens-of-aging-dams-a-potential-toxic-calamity/",
+      "img": dams
     },
     {
       "name": "Covid Retrospective",
       "type": "Journalism",
       "url": "https://undark.org/2022/04/19/covid-19-retrospective/",
-      "imgUrl": "https://images.unsplash.com/photo-1584118624012-df056829fbd0?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "img": covidRetrospective
     },
     {
       "name": "Disco Spiral",
       "type": "Art",
       "url": "https://observablehq.com/@alejandrokennedy/disco-spiral",
-      "imgUrl": "https://images.unsplash.com/photo-1471009901894-1c05ac30d5fe?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "img": discoSpiral
-    }
+    },
+    {
+      "name": "Covid Tracker",
+      "type": "Journalism",
+      "url": "https://people.com/health/see-how-the-highly-contagious-coronavirus-spread-across-the-us/",
+      "img": covidPeople
+    },
+    {
+      "name": "Investopedia Terms 2022",
+      "type": "Journalism",
+      "url": "https://www.investopedia.com/2022-top-terms-of-the-year-6835881",
+      "img": investopediaTerms2022
+    },
+    {
+      "name": "Animation Template",
+      "type": "Art",
+      "url": "https://observablehq.com/@alejandrokennedy/animation-template-canvas",
+      "img": animationTemplateCanvas
+    },
+    {
+      "name": "Editable Tidy Tree",
+      "type": "POC",
+      "url": "https://observablehq.com/@alejandrokennedy/collapsible-tree-editable-nodes",
+      "img": tidyTreeEditable
+    },
+    {
+      "name": "Scale Explorer",
+      "type": "Art",
+      "url": "https://observablehq.com/@alejandrokennedy/scale-explorer-2-2",
+      "img": scaleExplorer
+    },
   ]
 
   return (
@@ -37,12 +69,10 @@ export function ProjectGrid() {
           {items.map(item => {
             return (
               <Grid.Col span={{ base: 12, xs: 6, sm: 4 }} key={item.name}>
-                {/* <Skeleton height={rem(200)} radius="md" animate={false} /> */}
                 <ProjectCard
                   name={item.name}
                   type={item.type}
                   url={item.url}
-                  imgUrl={item.imgUrl}
                   img={item.img}
                 />
               </Grid.Col>
