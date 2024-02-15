@@ -23,14 +23,14 @@ export default function MobileNavbar({ children }: { children: any }) {
   const [opened, { toggle }] = useDisclosure()
   const pathLink = links.find((link) => link.link === usePathname())
   const [active, setActive] = useState(pathLink?.link || '/')
-  
+
   const items = links.map((link) => (
     <Link key={link.label}
       href={link.link}
       className={classes.link}
       data-active={active === link.link || undefined}
       onClick={() => setActive(link.link)}
-      >
+    >
       {link.label}
     </Link>
   ))

@@ -1,6 +1,6 @@
 'use client'
 
-import { Container, Grid, Skeleton, rem } from '@mantine/core';
+import { Container, Grid } from '@mantine/core';
 import { ProjectCard } from '../ProjectCard/ProjectCard';
 import discoSpiral from '../../public/images/discoSpiral.png';
 import covidPeople from '../../public/images/covidPeople.png';

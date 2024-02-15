@@ -19,5 +19,8 @@ export default withBundleAnalyzer({
     });
 
     return config;
+  },
+  images: {
+    domains: ['media.gettyimages.com'],
   }
 });
