@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
-  padding-top: rem(180px);
-  padding-bottom: rem(130px);
+  /* padding-top: rem(180px);
+  padding-bottom: rem(130px); */
   /* background-image: url(https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&w=2938&auto=format&fit=crop&w=980&q=80); */
   background-size: cover;
   background-position: center;
@@ -12,10 +12,14 @@
   }
 }
 
-.inner {
+/* #svg {
+  height: 400px;
+} */
+
+/* .inner {
   position: relative;
   z-index: 1;
-}
+} */
 
 /* .title {
   font-weight: 800;
