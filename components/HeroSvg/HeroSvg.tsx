@@ -22,6 +22,11 @@ export function HeroSvg() {
       ? `rgb(${randVal()}, ${randVal()}, ${randVal()})`
       : `rgb(${randVal()}, ${randVal()}, ${randVal()}, ${opacity})`;
   }
+  const t = 5500
+  const maxW = 85
+  const maxH = 150
+  const minW = 3
+  const minH = 3
 
   // async function* count(start: number, svg: d3.Selection<SVGGElement, unknown, null, undefined>) {
   //   let i = 0;
@@ -46,7 +51,7 @@ export function HeroSvg() {
       yield new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(num)
-        }, 2000)
+        }, t)
       });
       num++
     }
@@ -60,26 +65,63 @@ export function HeroSvg() {
     if (!svgRef.current) return;
 
     let cancel = false
-    const data = Array.from({ length: 3 }, d => randomColor())
+    const data = Array.from({ length: 25 }, d => randomColor())
     const svg = d3.select(svgRef.current);
+    const filter = svg.append('filter')
+      .attr('id', 'rect-filter');
+
+    // filter.append('feGaussianBlur')
+    //   .attr('stdDeviation', 2);
+
+    filter.append("feGaussianBlur")
+      .attr("in", "SourceGraphic")
+      .attr("stdDeviation", "8")
+      .attr("result", "blur")
+
+    filter.append("feColorMatrix")
+      .attr("in", "blur")
+      .attr("mode","matrix")
+      .attr("values","1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7")
+      .attr("result","gooey")
+
+    // filter.append('feTurbulence')
+    //   .attr('baseFrequency', 0.01)
+    //   .attr('numOctaves', 1)
+    //   .attr('result', 'turbulence');
     
-    svg.selectAll('circle')
+    // filter.append('feDisplacementMap')
+      // .attr('in2', 'turbulence')
+      // .attr('scale', 20);
+    
+    // svg.selectAll('circle')
+    //   .data(data)
+    //   .join('circle')
+    //   .attr("cy", d3.randomUniform(0, height))
+    //   .attr("cx", d3.randomUniform(0, width))
+    //   .attr('cy', 80)
+    //   .attr('r', 70)
+    //   .style('fill', d => d)
+
+    const rects = svg.selectAll('rect')
       .data(data)
-      .join('circle')
-      .attr("cy", d3.randomUniform(0, height))
-      .attr("cx", d3.randomUniform(0, width))
-      .attr('cy', 80)
-      .attr('r', 70)
+      .join('rect')
+      .attr("x", d3.randomUniform(0, width))
+      .attr("y", d3.randomUniform(0, height))
+      .attr('width', d3.randomUniform(minW, maxW))
+      .attr('height', d3.randomUniform(minH, maxH))
       .style('fill', d => d)
+      .style('opacity', 0.3)
+      .attr('filter', 'url(#rect-filter)');
 
     const asyncStarter = async () => {
       for await (const number of asyncGeneratorObject) {
         if(cancel) return;
         console.log(number)
-        const circles = svg.selectAll('circle')
-        circles.transition().duration(3000).ease(d3.easeCubicInOut)
-          .attr("cy", d3.randomUniform(0, height))
-          .attr("cx", d3.randomUniform(0, width))
+        rects.transition().duration(t).ease(d3.easeCubicInOut)
+          .attr("x", d3.randomUniform(0, width))
+          .attr("y", d3.randomUniform(0, height))
+          .attr('width', d3.randomUniform(minW, maxW))
+          .attr('height', d3.randomUniform(minH, maxH))
       }
     }
 
