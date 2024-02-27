@@ -74,6 +74,8 @@ export function HeroSvg() {
       // 'Data Visualization'
     ]
 
+    const fontSize = Math.round(width / 10)
+
     // filter.append('feGaussianBlur')
     //   .attr('stdDeviation', 2);
 
@@ -105,7 +107,7 @@ export function HeroSvg() {
       .attr('x', width / 2)
       .attr('y', height / 2)
       .attr('fill', 'currentColor')
-      .attr('font-size', '80px')
+      .style('font-size', fontSize + 'px')
       .style('text-anchor','middle')
       .text(d => d)
 
