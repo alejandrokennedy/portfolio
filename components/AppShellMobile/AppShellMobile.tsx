@@ -1,6 +1,6 @@
 'use client'
 
-import { AppShell, Burger, Group } from '@mantine/core';
+import { AppShell, Box, Burger, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { AkLogo } from '../svgs';
 import classes from './AppShellMobile.module.css'
@@ -45,7 +45,12 @@ export default function MobileNavbar({ children }: { children: any }) {
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Group justify="space-between" style={{ flex: 1 }}>
-            <AkLogo />
+            {/* <Box sx={{ width: 40, height: 40 }}> */}
+            <Link href="/" className={classes.logoLink}>
+              <Box h='59px' w='59px'>
+                <AkLogo />
+              </Box>
+            </Link>
             <Group ml="xl" gap={0} visibleFrom="sm">
               {items}
             </Group>

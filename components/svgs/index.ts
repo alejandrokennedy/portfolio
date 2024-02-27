@@ -1,1 +1,1 @@
-export { default as AkLogo } from './AkLogoOld.svg'
+export { default as AkLogo } from './AkLogo.svg'

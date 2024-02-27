@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.logoLink {
+  color: currentColor;
+}
+
 .link {
   display: block;
   line-height: 1;
