@@ -69,6 +69,10 @@ export function HeroSvg() {
     const svg = d3.select(svgRef.current);
     const filter = svg.append('filter')
       .attr('id', 'rect-filter');
+    const textData = [
+      'Data Visualization'
+      // 'Data Visualization'
+    ]
 
     // filter.append('feGaussianBlur')
     //   .attr('stdDeviation', 2);
@@ -93,7 +97,17 @@ export function HeroSvg() {
       .attr('height', 0)
       .style('fill', d => d)
       .style('opacity', 0.3)
-      .attr('filter', 'url(#rect-filter)');
+      .attr('filter', 'url(#rect-filter)')
+
+    const text = svg.selectAll('text')
+      .data(textData)
+      .join('text')
+      .attr('x', width / 2)
+      .attr('y', height / 2)
+      .attr('fill', 'currentColor')
+      .attr('font-size', '80px')
+      .style('text-anchor','middle')
+      .text(d => d)
 
     const transitionRects = () => {
       rects.transition().duration(t).ease(d3.easeCubicInOut)
