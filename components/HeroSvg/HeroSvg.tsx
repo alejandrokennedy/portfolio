@@ -89,21 +89,26 @@ export function HeroSvg() {
       .join('rect')
       .attr("x", d3.randomUniform(0, width - maxW))
       .attr("y", d3.randomUniform(0, height - maxH))
-      .attr('width', d3.randomUniform(minW, maxW))
-      .attr('height', d3.randomUniform(minH, maxH))
+      .attr('width', 0)
+      .attr('height', 0)
       .style('fill', d => d)
       .style('opacity', 0.3)
       .attr('filter', 'url(#rect-filter)');
 
+    const transitionRects = () => {
+      rects.transition().duration(t).ease(d3.easeCubicInOut)
+        .attr("x", d3.randomUniform(0, width - maxW))
+        .attr("y", d3.randomUniform(0, height - maxH))
+        .attr('width', d3.randomUniform(minW, maxW))
+        .attr('height', d3.randomUniform(minH, maxH))
+      }
+    
+    transitionRects()
+
     const asyncStarter = async () => {
       for await (const number of asyncGeneratorObject) {
         if(cancel) return;
-        console.log(number)
-        rects.transition().duration(t).ease(d3.easeCubicInOut)
-          .attr("x", d3.randomUniform(0, width - maxW))
-          .attr("y", d3.randomUniform(0, height - maxH))
-          .attr('width', d3.randomUniform(minW, maxW))
-          .attr('height', d3.randomUniform(minH, maxH))
+        transitionRects()
       }
     }
 
