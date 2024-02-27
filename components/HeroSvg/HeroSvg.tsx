@@ -84,29 +84,11 @@ export function HeroSvg() {
       .attr("values","1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7")
       .attr("result","gooey")
 
-    // filter.append('feTurbulence')
-    //   .attr('baseFrequency', 0.01)
-    //   .attr('numOctaves', 1)
-    //   .attr('result', 'turbulence');
-    
-    // filter.append('feDisplacementMap')
-      // .attr('in2', 'turbulence')
-      // .attr('scale', 20);
-    
-    // svg.selectAll('circle')
-    //   .data(data)
-    //   .join('circle')
-    //   .attr("cy", d3.randomUniform(0, height))
-    //   .attr("cx", d3.randomUniform(0, width))
-    //   .attr('cy', 80)
-    //   .attr('r', 70)
-    //   .style('fill', d => d)
-
     const rects = svg.selectAll('rect')
       .data(data)
       .join('rect')
-      .attr("x", d3.randomUniform(0, width))
-      .attr("y", d3.randomUniform(0, height))
+      .attr("x", d3.randomUniform(0, width - maxW))
+      .attr("y", d3.randomUniform(0, height - maxH))
       .attr('width', d3.randomUniform(minW, maxW))
       .attr('height', d3.randomUniform(minH, maxH))
       .style('fill', d => d)
@@ -118,8 +100,8 @@ export function HeroSvg() {
         if(cancel) return;
         console.log(number)
         rects.transition().duration(t).ease(d3.easeCubicInOut)
-          .attr("x", d3.randomUniform(0, width))
-          .attr("y", d3.randomUniform(0, height))
+          .attr("x", d3.randomUniform(0, width - maxW))
+          .attr("y", d3.randomUniform(0, height - maxH))
           .attr('width', d3.randomUniform(minW, maxW))
           .attr('height', d3.randomUniform(minH, maxH))
       }
