@@ -11,7 +11,7 @@ import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 
 const links = [
   { link: '/', label: 'Home' },
-  { link: '/portfolio', label: 'Portfolio' },
+  // { link: '/portfolio', label: 'Portfolio' },
   { link: '/awards', label: 'Awards' },
   // { link: '/teaching', label: 'Teaching' },
   // { link: '/about', label: 'About' },
