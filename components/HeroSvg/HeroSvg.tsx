@@ -70,8 +70,11 @@ export function HeroSvg() {
     const filter = svg.append('filter')
       .attr('id', 'rect-filter');
     const textData = [
-      'Data Visualization'
-      // 'Data Visualization'
+      // 'Data',
+      'Data Visualization',
+      // 'Data Journalism',
+      // 'Data Storytelling',
+      // 'Data Art',
     ]
 
     const fontSize = Math.round(width / 10)

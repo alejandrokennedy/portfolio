@@ -11,12 +11,12 @@ import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 
 const links = [
   { link: '/', label: 'Home' },
-  // { link: '/test', label: 'Test' },
   { link: '/portfolio', label: 'Portfolio' },
   { link: '/awards', label: 'Awards' },
-  { link: '/teaching', label: 'Teaching' },
-  { link: '/about', label: 'About' },
+  // { link: '/teaching', label: 'Teaching' },
+  // { link: '/about', label: 'About' },
   { link: '/contact', label: 'Contact' },
+  // { link: '/test', label: 'Test' },
 ]
 
 export default function MobileNavbar({ children }: { children: any }) {
