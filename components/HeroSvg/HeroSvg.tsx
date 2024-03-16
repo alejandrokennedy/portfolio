@@ -28,32 +28,23 @@ export function HeroSvg() {
   const minW = 3
   const minH = 3
 
-  // async function* count(start: number, svg: d3.Selection<SVGGElement, unknown, null, undefined>) {
-  //   let i = 0;
-  //   const w = Math.min(640, rect.width);
-  //   const h = 320;
-  //   const r = 20;
-  //   const t = 1500;
-  //   // const svg = d3.select(DOM.svg(w, h));
-  //   const circle = svg.append("circle").attr("r", r).attr("cx", w / 4).attr("cy", h / 4);
-  //   while (true) {
-  //     yield svg.node();
-  //     await circle.transition().duration(t).attr("cy", h * 3 / 4).end();
-  //     await circle.transition().duration(t).attr("cx", w * 3 / 4).end();
-  //     await circle.transition().duration(t).attr("cy", h * 1 / 4).end();
-  //     await circle.transition().duration(t).attr("cx", w * 1 / 4).end();
-  //   }
-  // }
+  const textData = [
+    'Data Visualization',
+    'Data Journalism',
+    'Data Storytelling',
+    'Data Art',
+    'Web Development',
+  ]
 
   async function* asyncGenerator() {
-    let num = 0
+    let num = 1
     while (true) {
       yield new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(num)
         }, t)
       });
-      num++
+      num < textData.length - 1 ? num++ : num = 0;
     }
   }
 
@@ -69,13 +60,6 @@ export function HeroSvg() {
     const svg = d3.select(svgRef.current);
     const filter = svg.append('filter')
       .attr('id', 'rect-filter');
-    const textData = [
-      // 'Data',
-      'Data Visualization',
-      // 'Data Journalism',
-      // 'Data Storytelling',
-      // 'Data Art',
-    ]
 
     const fontSize = Math.round(width / 10)
 
@@ -104,15 +88,24 @@ export function HeroSvg() {
       .style('opacity', 0.3)
       .attr('filter', 'url(#rect-filter)')
 
-    const text = svg.selectAll('text')
-      .data(textData)
-      .join('text')
+    const text = svg.append('text')
       .attr('x', width / 2)
       .attr('y', height / 2)
       .attr('fill', 'currentColor')
       .style('font-size', fontSize + 'px')
       .style('text-anchor','middle')
-      .text(d => d)
+      .style('opacity', 0)
+      .text(textData[0])
+
+    const recycleText = (num: number) => {
+      text
+      .transition().duration(t / 4).ease(d3.easeCubicInOut)
+      .style('opacity', '1')
+      .on('end', () => text.transition().duration(t / 4).delay(t / 2).style('opacity', 0))
+      .text(textData[num])
+    }
+
+    recycleText(0)
 
     const transitionRects = () => {
       rects.transition().duration(t).ease(d3.easeCubicInOut)
@@ -128,6 +121,7 @@ export function HeroSvg() {
       for await (const number of asyncGeneratorObject) {
         if(cancel) return;
         transitionRects()
+        recycleText(Number(number))
       }
     }
 
