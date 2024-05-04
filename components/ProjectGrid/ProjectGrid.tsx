@@ -34,7 +34,7 @@ export function ProjectGrid() {
     {
       "name": "Covid Tracker",
       "type": "Journalism",
-      "url": "https://people.com/health/see-how-the-highly-contagious-coronavirus-spread-across-the-us/",
+      "url": "/peopleCovid",
       "img": covidPeople
     },
     {

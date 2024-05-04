@@ -12,6 +12,7 @@ interface ProjectCardProps {
 export function ProjectCard(props: ProjectCardProps) {
   const theme = useMantineTheme();
 
+  console.log(props.url[0])
   return (
     <Card
       p="lg"
@@ -20,7 +21,7 @@ export function ProjectCard(props: ProjectCardProps) {
       radius="md"
       component="a"
       href={props.url}
-      target="_blank"
+      target={props.url[0] != '/' ? "_blank" : undefined}
     >
       <div
         className={classes.image}
