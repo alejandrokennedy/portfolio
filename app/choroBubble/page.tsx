@@ -3,7 +3,7 @@
 import AppShellMobile from '@/components/AppShellMobile/AppShellMobile';
 import { Center, Container, Space, Text, Title } from '@mantine/core';
 import Image from 'next/image';
-import choroBubble from '../../public/images/choroBubble.gif';
+import choroBubbleGif from '../../public/images/choroBubbleGif.gif';
 
 const ChoroBubble = () => {
   return (
@@ -19,7 +19,7 @@ const ChoroBubble = () => {
         </Center>
         <Space h="lg" />
         <Center>
-          <Image alt='Choropleth to bubble map transition' src={choroBubble}></Image>
+          <Image alt='Choropleth to bubble map transition' src={choroBubbleGif}></Image>
         </Center>
       </Container>
     </AppShellMobile>
