@@ -2,11 +2,10 @@
 
 import awards from '../../data/awards.json';
 
-import AppShellMobile from '@/components/AppShellMobile/AppShellMobile'
+import AppShellMobile from '@/components/AppShellMobile/AppShellMobile';
 import { AwardCard } from '@/components/AwardCard/AwardCard';
 import { Container, Grid, Stack } from '@mantine/core';
 import Image from 'next/image';
-import React from 'react'
 
 const Awards = () => {
   return (

@@ -12,7 +12,6 @@ interface ProjectCardProps {
 export function ProjectCard(props: ProjectCardProps) {
   const theme = useMantineTheme();
 
-  console.log(props.url[0])
   return (
     <Card
       p="lg"

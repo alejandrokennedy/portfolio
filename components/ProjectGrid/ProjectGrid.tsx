@@ -1,15 +1,16 @@
 'use client'
 
 import { Container, Grid } from '@mantine/core';
-import { ProjectCard } from '../ProjectCard/ProjectCard';
-import discoSpiral from '../../public/images/discoSpiral.png';
+import animationTemplateCanvas from '../../public/images/animationTemplateCanvas.png';
+import choroBubbleThumbnail from '../../public/images/choroBubbleThumbnail.png';
 import covidPeople from '../../public/images/covidPeople.png';
 import covidRetrospective from '../../public/images/covidRetrospective.png';
 import dams from '../../public/images/dams.png';
+import discoSpiral from '../../public/images/discoSpiral.png';
 import investopediaTerms2022 from '../../public/images/investopediaTerms2022.png';
-import animationTemplateCanvas from '../../public/images/animationTemplateCanvas.png';
 import scaleExplorer from '../../public/images/scaleExplorer.png';
 import tidyTreeEditable from '../../public/images/tidyTreeEditable.png';
+import { ProjectCard } from '../ProjectCard/ProjectCard';
 
 export function ProjectGrid() {
   const items = [
@@ -60,6 +61,12 @@ export function ProjectGrid() {
       "type": "Art",
       "url": "https://observablehq.com/@alejandrokennedy/scale-explorer-2-2",
       "img": scaleExplorer
+    },
+    {
+      "name": "Choropleth → Bubble Map",
+      "type": "POC",
+      "url": "/choroBubble",
+      "img": choroBubbleThumbnail
     },
   ]
 
