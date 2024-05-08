@@ -6,10 +6,10 @@
 
 "use client"
 
-import classes from './HeroSvg.module.css';
-import { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
 import { useElementSize } from '@mantine/hooks';
+import * as d3 from 'd3';
+import { useEffect, useRef } from 'react';
+import classes from './HeroSvg.module.css';
 
 export function HeroSvg() {
 
@@ -61,7 +61,7 @@ export function HeroSvg() {
     const filter = svg.append('filter')
       .attr('id', 'rect-filter');
 
-    const fontSize = Math.round(width / 10)
+    const fontSize = d3.min([100, Math.round(width / 10)])
 
     // filter.append('feGaussianBlur')
     //   .attr('stdDeviation', 2);
