@@ -6,9 +6,6 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 export default withBundleAnalyzer({
   reactStrictMode: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
@@ -21,6 +18,19 @@ export default withBundleAnalyzer({
     return config;
   },
   images: {
-    domains: ['media.gettyimages.com'],
-  }
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media.gettyimages.com',
+      },
+    ],
+  },
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
 });

@@ -14,7 +14,7 @@ const links = [
   // { link: '/portfolio', label: 'Portfolio' },
   { link: '/awards', label: 'Awards' },
   // { link: '/teaching', label: 'Teaching' },
-  // { link: '/about', label: 'About' },
+  { link: '/about', label: 'About' },
   { link: '/contact', label: 'Contact' },
   // { link: '/test', label: 'Test' },
 ]
