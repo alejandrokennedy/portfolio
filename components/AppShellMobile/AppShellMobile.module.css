@@ -13,25 +13,60 @@
 }
 
 .logoLink {
-  color: currentColor;
+  position: relative;
+  display: block;
+  border-radius: var(--mantine-radius-sm);
+  /* Matches the hero text: slightly brighter than body text in dark mode */
+  color: light-dark(var(--mantine-color-black), #e6e6e6);
+  transition: transform 250ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Hairline that draws out from the center on hover, and a slight lift */
+  &::after {
+    content: '';
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    bottom: rem(6px);
+    height: rem(1.5px);
+    border-radius: rem(1px);
+    background-color: currentColor;
+    opacity: 0.55;
+    transform: scaleX(0);
+    transition: transform 250ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  @mixin hover {
+    transform: translateY(rem(-1px));
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &:focus-visible {
+    outline: rem(1.5px) solid currentColor;
+    outline-offset: rem(2px);
+  }
 }
 
 .link {
   display: block;
   line-height: 1;
   padding: rem(8px) rem(12px);
-  border-radius: var(--mantine-radius-sm);
   text-decoration: none;
   color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-  font-size: var(--mantine-font-size-sm);
+  font-size: rem(15.5px);
   font-weight: 500;
 
+  /* Backgrounds are drawn in a blob shape by the BlobSurface layer */
   @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    --blob-bg: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
   }
 
-  [data-mantine-color-scheme] &[data-active] {
-    background-color: var(--mantine-color-blue-filled);
-    color: var(--mantine-color-white);
+  /* Active: the accent blob color from the hero. Text is dark on the pastel in light mode and
+     light on the deep tint in dark mode; both pass WCAG AA (checked when the color is picked). */
+  &[data-active] {
+    --blob-bg: var(--ak-accent, light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6)));
+    color: light-dark(#1a1a1a, #e6e6e6);
   }
 }

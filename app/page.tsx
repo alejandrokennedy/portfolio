@@ -1,4 +1,4 @@
-import { HeroSvg } from '@/components/HeroSvg/HeroSvg';
+import { HeroCanvas } from '@/components/HeroCanvas/HeroCanvas';
 import { ProjectGrid } from '@/components/ProjectGrid/ProjectGrid';
 import { Container, Space } from '@mantine/core';
 import AppShellMobile from '../components/AppShellMobile/AppShellMobile';
@@ -8,7 +8,7 @@ export default function HomePage() {
     <AppShellMobile>
       <Space h='lg'></Space>
       <Container size={1500}>
-        <HeroSvg />
+        <HeroCanvas />
       </Container>
       <Space></Space>
       <ProjectGrid/>

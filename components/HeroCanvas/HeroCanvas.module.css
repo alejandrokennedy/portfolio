@@ -1,0 +1,30 @@
+.wrapper {
+  position: relative;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    padding-top: rem(80px);
+    padding-bottom: rem(50px);
+  }
+}
+
+.stage {
+  position: relative;
+}
+
+.canvas {
+  display: block;
+  /* The text is drawn with the canvas's computed font, so this sets the hero font */
+  font-family: var(--mantine-font-family-headings);
+  /* Hero text color, also read by the canvas. Slightly brighter than body text in dark mode. */
+  color: light-dark(var(--mantine-color-black), #e6e6e6);
+  width: 100%;
+  height: rem(400px);
+}
+
+.textCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

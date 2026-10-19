@@ -1,18 +1,21 @@
 import '@mantine/core/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
+import { Rubik } from 'next/font/google';
 import { theme } from '../theme';
 
+const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' });
+
 export const metadata = {
-  title: "Alexander Kennedy",
+  title: { default: "Alexander Kennedy", template: "%s | Alexander Kennedy" },
   description: "Alexander Kennedy's portfolio",
 };
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={rubik.variable} suppressHydrationWarning>
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="auto" />
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta
           name="viewport"
@@ -20,7 +23,7 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme} defaultColorScheme="auto">{children}</MantineProvider>
       </body>
     </html>
   );

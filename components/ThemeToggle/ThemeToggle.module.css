@@ -3,22 +3,14 @@
   height: rem(22px);
 }
 
-.dark {
-  @mixin dark {
-    display: none;
-  }
+/* No border or own background; the hover background is a blob drawn by the BlobSurface layer,
+   matching the nav links. [data-variant] raises specificity above Mantine's ActionIcon styles. */
+.toggle[data-variant] {
+  background-color: transparent;
+  border-color: transparent;
 
-  @mixin light {
-    display: block;
-  }
-}
-
-.light {
-  @mixin light {
-    display: none;
-  }
-
-  @mixin dark {
-    display: block;
+  @mixin hover {
+    background-color: transparent;
+    --blob-bg: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
   }
 }

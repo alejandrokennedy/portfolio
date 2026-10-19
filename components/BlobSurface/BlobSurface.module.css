@@ -1,0 +1,17 @@
+/* Background drawn in the hero's blob shape (see useBlobShape). Set --blob-bg to color it.
+   It sits on its own layer behind the content, so text and focus outlines aren't clipped.
+   Until the outline is measured, a rounded rectangle stands in. */
+.surface {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    clip-path: var(--blob-path, inset(0 round rem(12px)));
+    background-color: var(--blob-bg, transparent);
+    transition: background-color 100ms ease-out;
+  }
+}

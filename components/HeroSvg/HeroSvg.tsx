@@ -32,7 +32,6 @@ export function HeroSvg() {
     'Data Visualization',
     'Full-Stack Engineering',
     'Data Storytelling',
-    'Data Art',
   ]
 
   async function* asyncGenerator() {
