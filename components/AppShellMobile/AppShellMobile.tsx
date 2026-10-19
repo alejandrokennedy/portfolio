@@ -13,6 +13,7 @@ const links = [
   { link: '/', label: 'Home' },
   // { link: '/portfolio', label: 'Portfolio' },
   { link: '/awards', label: 'Awards' },
+  { link: '/books', label: 'Books' },
   // { link: '/teaching', label: 'Teaching' },
   { link: '/about', label: 'About' },
   { link: '/contact', label: 'Contact' },

@@ -1,0 +1,24 @@
+[
+  {
+    "title": "The Global Positioning System and GIS",
+    "edition": "Fourth Edition",
+    "authors": "Michael Kennedy and Alexander Kennedy",
+    "publisher": "CRC Press",
+    "year": 2025,
+    "url": "https://www.taylorfrancis.com/books/mono/10.1201/9781003053095/global-positioning-system-gis-michael-kennedy-alexander-kennedy",
+    "imgUrl": "/images/gpsGisBook.jpg",
+    "description": [
+      "Now in its fourth edition, The Global Positioning System and GIS arrives at a critical moment of transition—a time when new methods for collecting position and attribute data are reshaping how information is integrated into Geographic Information Systems (GIS).",
+      "This edition is uniquely structured to reflect this shift: each chapter is divided into two sections—one covering “Newer Technology,” including the latest advances in hardware, software, and cloud-based data collection, and the other preserving and refining “Older Technology” techniques from the third edition.",
+      "As GIS platforms represent the Earth with increasing precision and Global Navigation Satellite Systems (GNSS) deliver accuracy down to the centimeter, this book equips readers with proven, practical methods for building highly accurate and actionable geospatial datasets across a wide variety of devices and platforms."
+    ],
+    "features": [
+      "Step-by-step tutorials for hands-on learning, balancing theoretical foundations with practical application",
+      "Covers both ArcGIS Pro (ESRI) and QGIS (open-source), ensuring students and professionals can work across essential GIS platforms",
+      "Supports a broad range of devices: Android, iOS, and Trimble receivers",
+      "Provides downloadable datasets for instructors to use in exercises, examples, and exams",
+      "Features an entirely new chapter by GPS World former Editor-in-Chief Matteo Luccio, along with exclusive interviews with GPS and GIS pioneers Brad Parkinson, Charlie Trimble, and Jack Dangermond"
+    ],
+    "conclusion": "Clear, practical, and deeply informed by the evolution of the field, The Global Positioning System and GIS, first published in 1996, remains the definitive resource for anyone working where geospatial accuracy matters—from students and researchers to GIS professionals across all disciplines."
+  }
+]

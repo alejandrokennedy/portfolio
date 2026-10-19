@@ -1,0 +1,11 @@
+.cover {
+  flex-shrink: 0;
+  box-shadow: var(--mantine-shadow-md);
+  border-radius: var(--mantine-radius-sm);
+}
+
+.name {
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+}
