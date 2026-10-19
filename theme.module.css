@@ -1,0 +1,25 @@
+/* Links: same color as the surrounding text, with a soft underline that firms up on hover.
+   The underline (not color alone) marks them as links, per WCAG 1.4.1. */
+.anchor {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: rem(1px);
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  transition: text-decoration-color 120ms ease-out;
+
+  /* Title links (underline="hover") show no underline until hovered */
+  &[data-underline='hover'] {
+    text-decoration-color: transparent;
+  }
+
+  @mixin hover {
+    text-decoration-color: currentColor;
+  }
+
+  &:focus-visible {
+    outline: rem(2px) solid currentColor;
+    outline-offset: rem(2px);
+    border-radius: rem(2px);
+  }
+}

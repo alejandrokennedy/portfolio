@@ -1,4 +1,6 @@
-import '@mantine/core/styles.css';
+// Layered Mantine styles, so the site's own CSS always takes precedence over Mantine's defaults
+import '@mantine/core/styles.layer.css';
+import './globals.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { Rubik } from 'next/font/google';

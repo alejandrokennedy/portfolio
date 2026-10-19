@@ -1,0 +1,5 @@
+/* Always reserve room for the vertical scrollbar, so short pages (no scrollbar) and long pages
+   (scrollbar) lay out at the same width and the centered nav doesn't shift between them. */
+html {
+  scrollbar-gutter: stable;
+}

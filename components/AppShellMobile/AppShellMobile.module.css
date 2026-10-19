@@ -24,8 +24,9 @@
   &::after {
     content: '';
     position: absolute;
-    left: 18%;
-    right: 18%;
+    /* The glyphs span the logo's full box, so the line runs edge to edge like an underline */
+    left: 0;
+    right: 0;
     bottom: rem(6px);
     height: rem(1.5px);
     border-radius: rem(1px);
