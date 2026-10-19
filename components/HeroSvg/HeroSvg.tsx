@@ -30,10 +30,9 @@ export function HeroSvg() {
 
   const textData = [
     'Data Visualization',
-    'Data Journalism',
+    'Full-Stack Engineering',
     'Data Storytelling',
     'Data Art',
-    'Web Development',
   ]
 
   async function* asyncGenerator() {
