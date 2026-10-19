@@ -51,17 +51,17 @@ export function BookCard({
         </Text>
 
         {description?.map((paragraph) => (
-          <Text fz="sm" mt="md" key={paragraph}>
+          <Text fz="md" lh={1.65} mt="md" key={paragraph}>
             {paragraph}
           </Text>
         ))}
 
         {features && (
           <>
-            <Text fz="sm" fw={700} mt="md">
+            <Text fz="md" fw={700} mt="md">
               Features:
             </Text>
-            <List fz="sm" spacing={4} mt={4} pr="md">
+            <List fz="md" lh={1.65} spacing={4} mt={4} pr="md">
               {features.map((feature) => (
                 <List.Item key={feature}>{feature}</List.Item>
               ))}
@@ -70,7 +70,7 @@ export function BookCard({
         )}
 
         {conclusion && (
-          <Text fz="sm" mt="md">
+          <Text fz="md" lh={1.65} mt="md">
             {conclusion}
           </Text>
         )}

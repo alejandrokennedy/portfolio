@@ -17,13 +17,9 @@ export default withBundleAnalyzer({
 
     return config;
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'media.gettyimages.com',
-      },
-    ],
+  // The Books page was renamed to Writing; keep old links working
+  async redirects() {
+    return [{ source: '/books', destination: '/writing', permanent: true }];
   },
   turbopack: {
     rules: {

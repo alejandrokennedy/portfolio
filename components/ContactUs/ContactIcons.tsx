@@ -1,5 +1,6 @@
-import { Text, Box, Stack, rem } from '@mantine/core';
-import { IconSun, IconPhone, IconMapPin, IconAt, IconBrandTwitter } from '@tabler/icons-react';
+import { Anchor, Text, Box, Stack, rem } from '@mantine/core';
+import { IconSun, IconPhone, IconMapPin, IconAt, IconBrandLinkedin } from '@tabler/icons-react';
+import { EmailLink } from './EmailLink';
 import classes from './ContactIcons.module.css';
 
 interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
@@ -19,15 +20,23 @@ function ContactIcon({ icon: Icon, title, description, ...others }: ContactIconP
         <Text size="xs" className={classes.title}>
           {title}
         </Text>
-        <Text className={classes.description}>{description}</Text>
+        <Text>{description}</Text>
       </div>
     </div>
   );
 }
 
 const MOCKDATA = [
-  { title: 'Email', description: 'alejandrokennedy[at]gmail[dot]com', icon: IconAt },
-  { title: 'Twitter / X', description: '@alejkennedy', icon: IconBrandTwitter },
+  { title: 'Email', description: <EmailLink />, icon: IconAt },
+  {
+    title: 'LinkedIn',
+    description: (
+      <Anchor href="https://www.linkedin.com/in/alejandrokennedy" target="_blank" c="inherit">
+        linkedin.com/in/alejandrokennedy
+      </Anchor>
+    ),
+    icon: IconBrandLinkedin,
+  },
   // { title: 'Phone', description: '+49 (800) 335 35 35', icon: IconPhone },
   // { title: 'Address', description: '844 Morris Park avenue', icon: IconMapPin },
   // { title: 'Working hours', description: '8 a.m. – 11 p.m.', icon: IconSun },

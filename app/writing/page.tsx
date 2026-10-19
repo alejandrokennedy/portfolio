@@ -4,12 +4,15 @@ import books from '../../data/books.json';
 
 import AppShellMobile from '@/components/AppShellMobile/AppShellMobile';
 import { BookCard } from '@/components/BookCard/BookCard';
-import { Container, Stack } from '@mantine/core';
+import { Container, Stack, Title } from '@mantine/core';
 
-const Books = () => {
+const Writing = () => {
   return (
     <AppShellMobile>
-      <Container my="md">
+      <Container size={800} my="md">
+        <Title order={1} mb="xl">
+          Writing
+        </Title>
         <Stack gap="xl">
           {books.map(book => (
             <BookCard
@@ -32,4 +35,4 @@ const Books = () => {
   )
 }
 
-export default Books
+export default Writing

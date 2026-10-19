@@ -1,0 +1,63 @@
+/* Same surface as the About card */
+.section {
+  padding: calc(var(--mantine-spacing-xl) * 1.5);
+  border-radius: var(--mantine-radius-lg);
+  background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    padding: var(--mantine-spacing-xl);
+  }
+}
+
+.sectionTitle {
+  font-family: var(--mantine-font-family-headings);
+  font-size: rem(24px);
+}
+
+.meta {
+  margin-top: rem(4px);
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: rem(0.4px);
+  color: var(--mantine-color-dimmed);
+}
+
+/* Matches the About and book blurb text */
+.paragraph {
+  font-size: var(--mantine-font-size-md);
+  line-height: 1.65;
+}
+
+.figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--mantine-spacing-md);
+  margin-top: var(--mantine-spacing-xl);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.figure {
+  margin: 0;
+}
+
+.imageFrame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--mantine-radius-md);
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.caption {
+  margin-top: var(--mantine-spacing-xs);
+  font-size: var(--mantine-font-size-xs);
+  line-height: 1.5;
+  color: var(--mantine-color-dimmed);
+}

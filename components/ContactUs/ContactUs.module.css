@@ -1,25 +1,16 @@
 .wrapper {
-  /* min-height: rem(400px); */
-  min-height: rem(300px);
-  /* max-width: rem(700px); */
-  background-image: linear-gradient(
-    -60deg,
-    var(--mantine-color-blue-4) 0%,
-    var(--mantine-color-blue-7) 100%
-  );
-  border-radius: var(--mantine-radius-md);
-  padding: calc(var(--mantine-spacing-xl) * 2.5);
+  /* Same surface as the About and Teaching cards */
+  background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
+  border-radius: var(--mantine-radius-lg);
+  padding: calc(var(--mantine-spacing-xl) * 1.5);
 
   @media (max-width: $mantine-breakpoint-sm) {
-    padding: calc(var(--mantine-spacing-xl) * 1.5);
+    padding: var(--mantine-spacing-xl);
   }
 }
 
 .title {
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
-  color: var(--mantine-color-white);
+  font-family: var(--mantine-font-family-headings);
   line-height: 1;
 }
 

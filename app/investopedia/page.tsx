@@ -1,42 +1,28 @@
-'use client';
-
 import AppShellMobile from '@/components/AppShellMobile/AppShellMobile';
-import { Anchor, Center, Container, Grid, Space, Title } from '@mantine/core';
+import { Anchor, Container, Text, Title } from '@mantine/core';
+
+export const metadata = { title: 'Investopedia’s Top 10 Terms of 2022' };
 
 const Investopedia = () => {
   return (
     <AppShellMobile>
-      <Container size={1500}>
-        <Space h="lg" />
-        <Center>
-          <Title>Investopedia's Top 10 Terms of 2022</Title>
-        </Center>
-        <Space h="lg" />
-        <Space h="lg" />
-        <Space h="lg" />
-        <Grid>
-          <Grid.Col span={{ base: 12, sm: 4 }}>
-            <div style={{ position: 'sticky', top: '75px' }}>
-              This visualization was published on Investopedia.com. The original article can be
-              viewed{' '}
-              <Anchor
-                href="https://www.investopedia.com/2022-top-terms-of-the-year-6835881"
-                underline="hover"
-              >
-                here
-              </Anchor>
-              . The Investopedia.com page unfortunately no longer correctly sizes the visualization.
-            </div>
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, sm: 8 }}>
-            <iframe
-              src="https://meredithcorp.github.io/investopedia-terms-viz-2022/"
-              title="2022 Investopedia Terms of the Year"
-              style={{ width: '100%', height: 450 }}
-              frameBorder="0"
-            />
-          </Grid.Col>
-        </Grid>
+      <Container size={800} my="md">
+        <Title order={1}>Investopedia’s Top 10 Terms of 2022</Title>
+        <Text fz="md" lh={1.65} mt="sm" mb="xl">
+          This visualization was published on Investopedia.com. The{' '}
+          <Anchor
+            href="https://www.investopedia.com/2022-top-terms-of-the-year-6835881"
+            target="_blank"
+          >
+            original article on Investopedia.com
+          </Anchor>{' '}
+          unfortunately no longer sizes the visualization correctly.
+        </Text>
+        <iframe
+          src="https://meredithcorp.github.io/investopedia-terms-viz-2022/"
+          title="2022 Investopedia Terms of the Year"
+          style={{ display: 'block', width: '100%', height: 450, border: 0 }}
+        />
       </Container>
     </AppShellMobile>
   );

@@ -9,11 +9,11 @@ import {
   ActionIcon,
   Container,
 } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import { IconBrandLinkedin, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import { ContactIconsList } from './ContactIcons';
 import classes from './ContactUs.module.css';
 
-const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
+const social = [IconBrandLinkedin, IconBrandYoutube, IconBrandInstagram];
 
 export function ContactUs() {
   // const icons = social.map((Icon, index) => (
@@ -23,15 +23,14 @@ export function ContactUs() {
   // ));
 
   return (
-    <Container>
+    <Container size={800} my="md">
+      <Title order={1} mb="xl">
+        Contact
+      </Title>
       {/* consider removing container if using form */}
       <div className={classes.wrapper}>
         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
           <div>
-            <Title className={classes.title}>Contact me:</Title>
-            <Text className={classes.description} mt="sm" mb={30}>
-
-            </Text>
 
             <ContactIconsList />
 
