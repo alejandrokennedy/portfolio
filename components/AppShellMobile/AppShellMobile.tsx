@@ -20,24 +20,34 @@ const links = [
   { link: '/teaching', label: 'Teaching' },
   { link: '/about', label: 'About' },
   { link: '/contact', label: 'Contact' },
-  // { link: '/test', label: 'Test' },
+  // A static file, so it's a plain link that opens in a new tab rather than a page route
+  { link: '/Alexander_Kennedy_Resume.pdf', label: 'Resume', file: true },
 ]
 
 interface NavLinkProps {
   href: string
   label: string
   active: boolean
+  file?: boolean
   onClick: () => void
 }
 
 // Nav button whose hover and active backgrounds take the shape of the hero's blobs
-function NavLink({ href, label, active, onClick }: NavLinkProps) {
+function NavLink({ href, label, active, file, onClick }: NavLinkProps) {
   const ref = useBlobShape<HTMLAnchorElement>()
+  const className = `${blobClasses.surface} ${classes.link}`
+  if (file) {
+    return (
+      <a ref={ref} href={href} className={className} target="_blank" rel="noopener">
+        {label}
+      </a>
+    )
+  }
   return (
     <Link
       ref={ref}
       href={href}
-      className={`${blobClasses.surface} ${classes.link}`}
+      className={className}
       data-active={active || undefined}
       onClick={onClick}
     >
@@ -62,6 +72,7 @@ export default function MobileNavbar({ children }: { children: any }) {
       href={link.link}
       label={link.label}
       active={active === link.link}
+      file={link.file}
       onClick={() => setActive(link.link)}
     />
   ))

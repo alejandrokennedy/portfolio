@@ -8,9 +8,27 @@ import { theme } from '../theme';
 
 const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' });
 
+const description =
+  'Alexander Kennedy is a software engineer, data visualization engineer, data journalist, and author specializing in custom analytics and interactive data storytelling.';
+
 export const metadata = {
-  title: { default: "Alexander Kennedy", template: "%s | Alexander Kennedy" },
-  description: "Alexander Kennedy's portfolio",
+  // Absolute base for link-preview URLs (the preview image comes from app/opengraph-image.tsx)
+  metadataBase: new URL('https://alexanderkennedy.io'),
+  title: { default: 'Alexander Kennedy', template: '%s | Alexander Kennedy' },
+  description,
+  openGraph: {
+    type: 'website',
+    siteName: 'Alexander Kennedy',
+    title: 'Alexander Kennedy',
+    description,
+    url: '/',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Alexander Kennedy',
+    description,
+  },
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -25,7 +43,9 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme} defaultColorScheme="auto">{children}</MantineProvider>
+        <MantineProvider theme={theme} defaultColorScheme="auto">
+          {children}
+        </MantineProvider>
       </body>
     </html>
   );

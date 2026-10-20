@@ -1,0 +1,15 @@
+.intro {
+  text-align: center;
+}
+
+.name {
+  font-size: rem(32px);
+}
+
+/* Matches the body text size used on About and Teaching */
+.description {
+  max-width: rem(680px);
+  margin: var(--mantine-spacing-xs) auto 0;
+  font-size: var(--mantine-font-size-md);
+  line-height: 1.65;
+}

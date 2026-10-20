@@ -35,6 +35,7 @@
 }
 
 .title {
+  font-family: var(--mantine-font-family-headings);
   color: var(--mantine-color-white);
   margin-bottom: rem(5px);
 }

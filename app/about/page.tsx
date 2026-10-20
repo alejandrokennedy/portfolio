@@ -29,7 +29,7 @@ const About = () => {
                 Journalist, and Author specializing in custom analytics and interactive data
                 storytelling, often for science, environmental, and public health issues. He joined{' '}
                 <Ext href="https://cen.acs.org/">C&EN</Ext> in August of 2025 as Senior Product
-                Engineer, Frontend and Data Visualization. He is a co-author of the book{' '}
+                Engineer, Front-End and Data Visualization. He is a co-author of the book{' '}
                 <Anchor href="/writing">
                   <em>The Global Positioning System and GIS</em>, 4th Edition
                 </Anchor>
