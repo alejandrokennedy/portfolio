@@ -1,17 +1,17 @@
-import { Card, Text, useMantineTheme } from '@mantine/core';
+import { Card, Text } from '@mantine/core';
+import Image, { StaticImageData } from 'next/image';
 import classes from './ProjectCard.module.css';
-import { StaticImageData } from 'next/image';
 
 interface ProjectCardProps {
   name: string;
   type: string;
   url: string; 
   img: StaticImageData;
+  /** Load immediately rather than lazily, for cards visible on first paint */
+  eager?: boolean;
 }
 
 export function ProjectCard(props: ProjectCardProps) {
-  const theme = useMantineTheme();
-
   return (
     <Card
       p="lg"
@@ -22,13 +22,19 @@ export function ProjectCard(props: ProjectCardProps) {
       href={props.url}
       target={props.url[0] != '/' ? "_blank" : undefined}
     >
-      <div
-        className={classes.image}
-        style={{
-          backgroundImage:
-            `url(${props.img.src})`,
-        }}
-      />
+      {/* next/image serves a resized WebP/AVIF instead of the full-size PNG, and lazy-loads
+          cards below the fold. Anchored top-left, like the CSS background it replaced. */}
+      <div className={classes.image}>
+        <Image
+          src={props.img}
+          alt=""
+          fill
+          sizes="(max-width: 36em) 100vw, (max-width: 48em) 50vw, 330px"
+          loading={props.eager ? 'eager' : 'lazy'}
+          fetchPriority={props.eager ? 'high' : undefined}
+          style={{ objectFit: 'cover', objectPosition: 'left top' }}
+        />
+      </div>
       <div className={classes.overlay} />
 
       <div className={classes.content}>

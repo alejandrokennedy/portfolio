@@ -13,7 +13,6 @@
 .image {
   position: absolute;
   inset: 0;
-  background-size: cover;
   transition: transform 500ms ease;
 }
 

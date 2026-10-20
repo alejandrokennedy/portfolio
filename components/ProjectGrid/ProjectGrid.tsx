@@ -2,14 +2,14 @@
 
 import { Container, Grid } from '@mantine/core';
 import animationTemplateCanvas from '../../public/images/animationTemplateCanvas.png';
-import cenAustraliaTrials from '../../public/images/cenAustraliaTrials.png';
-import cenCancerAlley from '../../public/images/cenCancerAlley.png';
-import cenNobelDatabase from '../../public/images/cenNobelDatabase.png';
+import cenAustraliaTrials from '../../public/images/cenAustraliaTrials.jpg';
+import cenCancerAlley from '../../public/images/cenCancerAlley.jpg';
+import cenNobelDatabase from '../../public/images/cenNobelDatabase.jpg';
 import choroBubbleThumbnail from '../../public/images/choroBubbleThumbnail.png';
 import covidPeople from '../../public/images/covidPeople.png';
-import covidRetrospective from '../../public/images/covidRetrospective.png';
-import dams from '../../public/images/dams.png';
-import discoSpiral from '../../public/images/discoSpiral.png';
+import covidRetrospective from '../../public/images/covidRetrospective.jpg';
+import dams from '../../public/images/dams.jpg';
+import discoSpiral from '../../public/images/discoSpiral.jpg';
 import investopediaTerms2022 from '../../public/images/investopediaTerms2022.png';
 import scaleExplorer from '../../public/images/scaleExplorer.png';
 import tidyTreeEditable from '../../public/images/tidyTreeEditable.png';
@@ -95,10 +95,16 @@ export function ProjectGrid() {
   return (
     <Container my="md">
       <Grid gutter="md">
-        {items.map((item) => {
+        {items.map((item, i) => {
           return (
             <Grid.Col span={{ base: 12, xs: 6, sm: 4 }} key={item.name}>
-              <ProjectCard name={item.name} type={item.type} url={item.url} img={item.img} />
+              <ProjectCard
+                name={item.name}
+                type={item.type}
+                url={item.url}
+                img={item.img}
+                eager={i < 3}
+              />
             </Grid.Col>
           );
         })}

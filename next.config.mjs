@@ -17,6 +17,10 @@ export default withBundleAnalyzer({
 
     return config;
   },
+  // Serve AVIF where supported (smallest), falling back to WebP
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   // The Books page was renamed to Writing; keep old links working
   async redirects() {
     return [{ source: '/books', destination: '/writing', permanent: true }];
