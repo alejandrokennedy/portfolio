@@ -26,8 +26,8 @@ const About = () => {
             <Stack gap="md">
               <Text className={classes.paragraph}>
                 Alexander Kennedy is a Software Engineer, Data Visualization Engineer, Data
-                Journalist, and Author specializing in interactive data storytelling for science,
-                environmental, and public health issues. He joined{' '}
+                Journalist, and Author specializing in custom analytics and interactive data
+                storytelling, often for science, environmental, and public health issues. He joined{' '}
                 <Ext href="https://cen.acs.org/">C&EN</Ext> in August of 2025 as Senior Product
                 Engineer, Frontend and Data Visualization. He is a co-author of the book{' '}
                 <Anchor href="/writing">
